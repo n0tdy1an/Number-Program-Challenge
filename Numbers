@@ -2,40 +2,52 @@
 using namespace std;
 int main ()
 {
-// Define Variables
+    // Define Variables
+
     int number = 24;
     int attempts = 1;
 
+    // Guess
     cout<< " Guess a number between 1 and 100."<< endl;
     cin >> number;
-    while (number != 24){
 
+    while (number != 24)
+        {
+
+    // If/When the number is too low
     while (number < 24)
+
     {
 
+        cout << "This number is too low" << endl;
+        cout << "Guess Again" << endl;
+        cin >> number;
 
-    cout << "This number is too low" << endl;
-    cout << "Guess Again" << endl;
-    cin >> number;
     attempts++;
 
     }
 
-    while ( number > 24) {
-    cout << "This number is too high" << endl;
-    cout << " Guess Again" << endl;
-    cin >> number;
+    // If/When the number is too high
+    if ( number > 24) {
+
+        cout << "This number is too high" << endl;
+        cout << " Guess Again" << endl;
+        cin >> number;
+
      attempts++;
+
     }
     }
 
+    //If/When the number is correct
      if (number == 24) {
-    cout << "Correct. This is the right number" << endl;
-    cout << attempts<<" Attempt(s)" << endl;
+
+        cout << "Correct. This is the right number" << endl;
+
+        cout << attempts<<" Attempt(s)" << endl;
      }
+
     return 0;
     cout << attempts << endl;
 
-
 }
-
