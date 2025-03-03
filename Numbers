@@ -1,38 +1,45 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 int main ()
-{
-    // Define Variables
 
-    int number = 24;
+{
+    srand(time(0));
+    // Define Variables
+    int number= rand() % 101;
     int attempts = 1;
+    int guess;
+
+
+
 
     // Guess
     cout<< " Guess a number between 1 and 100."<< endl;
-    cin >> number;
+    cin >> guess;
 
-    while (number != 24)
+    while (guess != number)
         {
 
     // If/When the number is too low
-    while (number < 24)
+    while (guess < number)
 
     {
 
         cout << "This number is too low" << endl;
         cout << "Guess Again" << endl;
-        cin >> number;
+        cin >> guess;
 
     attempts++;
 
     }
 
     // If/When the number is too high
-    if ( number > 24) {
+    if ( guess > number) {
 
         cout << "This number is too high" << endl;
         cout << " Guess Again" << endl;
-        cin >> number;
+        cin >> guess;
 
      attempts++;
 
@@ -40,7 +47,7 @@ int main ()
     }
 
     //If/When the number is correct
-     if (number == 24) {
+     if (guess == number) {
 
         cout << "Correct. This is the right number" << endl;
 
@@ -51,3 +58,4 @@ int main ()
     cout << attempts << endl;
 
 }
+
