@@ -1,7 +1,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <cmath>
+#include <limits>
 using namespace std;
+
 int main ()
 
 {
@@ -9,8 +12,7 @@ int main ()
     // Define Variables
     int number= rand() % 101;
     int attempts = 1;
-    int guess;
-
+    double guess;
 
 
 
@@ -18,11 +20,27 @@ int main ()
     cout<< " Guess a number between 1 and 100."<< endl;
     cin >> guess;
 
-    while (guess != number)
+ 
+
         {
 
+    while (guess != number){
+
+      if (cin.fail())
+
+    {
+        cout << "Sorry. You can only put integers. "<< endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Guess Again" << endl;
+        cin >> guess;
+        attempts++;
+
+}
+
+
     // If/When the number is too low
-    while (guess < number)
+   if (guess < number)
 
     {
 
@@ -35,7 +53,7 @@ int main ()
     }
 
     // If/When the number is too high
-    if ( guess > number) {
+    if( guess > number) {
 
         cout << "This number is too high" << endl;
         cout << " Guess Again" << endl;
@@ -44,18 +62,21 @@ int main ()
      attempts++;
 
     }
-    }
-
+}
+        
     //If/When the number is correct
      if (guess == number) {
 
         cout << "Correct. This is the right number" << endl;
 
         cout << attempts<<" Attempt(s)" << endl;
+   
+   
+   // If/When the user puts something other than an integer
+   
+     }
      }
 
-    return 0;
-    cout << attempts << endl;
-
+ return 0;
+ cout << attempts << endl;
 }
-
