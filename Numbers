@@ -13,19 +13,19 @@ int main ()
     int number= rand() % 101;
     int attempts = 1;
     double guess;
-
+    
 
 
     // Guess
     cout<< " Guess a number between 1 and 100."<< endl;
     cin >> guess;
 
- 
 
         {
 
     while (guess != number){
 
+ // If/When the user puts something other than an integer
       if (cin.fail())
 
     {
@@ -38,23 +38,35 @@ int main ()
 
 }
 
+    {
+        round(guess);
+    }
+
 
     // If/When the number is too low
-   if (guess < number)
+    if (guess < number);
+    if(round(guess) != guess)
 
     {
-
+        cout<<"This number is rounded to " << round(guess) << endl;
         cout << "This number is too low" << endl;
         cout << "Guess Again" << endl;
         cin >> guess;
 
     attempts++;
-
+}
+    else {
+        cout << "This number is too low" << endl;
+        cout << "Guess Again" << endl;
+        cin >> guess;
+        
     }
 
-    // If/When the number is too high
-    if( guess > number) {
 
+    // If/When the number is too high
+    if( guess > number)
+    if(round(guess) != guess){
+        
         cout << "This number is too high" << endl;
         cout << " Guess Again" << endl;
         cin >> guess;
@@ -62,21 +74,28 @@ int main ()
      attempts++;
 
     }
+    else { 
+        cout << "This number is too low" << endl;
+        cout << "Guess Again" << endl;
+        cin >> guess;
+    }
 }
         
     //If/When the number is correct
      if (guess == number) {
+        cout<<"This number is rounded to " << round(guess) << endl;
 
         cout << "Correct. This is the right number" << endl;
 
         cout << attempts<<" Attempt(s)" << endl;
    
    
-   // If/When the user puts something other than an integer
+  
    
      }
-     }
+    
 
  return 0;
  cout << attempts << endl;
+}
 }
