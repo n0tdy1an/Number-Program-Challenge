@@ -75,7 +75,7 @@ int main ()
 
     }
     else { 
-        cout << "This number is too low" << endl;
+        cout << "This number is too high" << endl;
         cout << "Guess Again" << endl;
         cin >> guess;
     }
