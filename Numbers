@@ -13,7 +13,7 @@ int main ()
     int number= rand() % 101;
     int attempts = 1;
     double guess;
-    
+
 
 
     // Guess
@@ -21,9 +21,9 @@ int main ()
     cin >> guess;
 
 
-        {
 
-    while (guess != number){
+
+    while (true){
 
  // If/When the user puts something other than an integer
       if (cin.fail())
@@ -37,65 +37,79 @@ int main ()
         attempts++;
 
 }
-
+// Rounds Decimals
     {
-        round(guess);
+    round(guess);
     }
 
 
     // If/When the number is too low
-    if (guess < number);
-    if(round(guess) != guess)
+    if (guess < number)
+    {
+       if(round(guess) != guess)
 
     {
         cout<<"This number is rounded to " << round(guess) << endl;
         cout << "This number is too low" << endl;
         cout << "Guess Again" << endl;
         cin >> guess;
-
-    attempts++;
-}
+        attempts++;
+    }
     else {
         cout << "This number is too low" << endl;
         cout << "Guess Again" << endl;
         cin >> guess;
-        
+        attempts++;
+    }
+
+
     }
 
 
     // If/When the number is too high
     if( guess > number)
-    if(round(guess) != guess){
-        
+    {
+        if(round(guess) !=guess){
+
+        cout<<"This number is rounded to " << round(guess) << endl;
         cout << "This number is too high" << endl;
         cout << " Guess Again" << endl;
         cin >> guess;
+        attempts++;
 
-     attempts++;
 
     }
-    else { 
+    else {
         cout << "This number is too high" << endl;
         cout << "Guess Again" << endl;
         cin >> guess;
+        attempts++;
     }
-}
-        
+
+
+    }
+
+
     //If/When the number is correct
-     if (guess == number) {
+    if (guess == number)
+    {
+        if (round(guess) != guess)
+
+    {
+
         cout<<"This number is rounded to " << round(guess) << endl;
 
         cout << "Correct. This is the right number" << endl;
 
         cout << attempts<<" Attempt(s)" << endl;
-   
-   
-  
-   
-     }
-    
 
- return 0;
- cout << attempts << endl;
+        break;
+
+
+     }
+    }
+
+
 }
+return 0;
 }
