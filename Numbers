@@ -93,17 +93,17 @@ int main ()
     //If/When the number is correct
     if (guess == number)
     {
-        if (round(guess) != guess)
+
 
     {
 
-        cout<<"This number is rounded to " << round(guess) << endl;
+
 
         cout << "Correct. This is the right number" << endl;
 
         cout << attempts<<" Attempt(s)" << endl;
 
-        break;
+break;
 
 
      }
@@ -113,3 +113,4 @@ int main ()
 }
 return 0;
 }
+
